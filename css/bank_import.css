@@ -1,0 +1,524 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+/* NAPIS USTAWIENIA */
+.bank-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 33px;
+  text-align: center;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość */
+  background-color: #012e40;
+  color: white;
+  font-size: 18px;
+  padding: 6px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+header .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość kontenera */
+}
+
+header h1 {
+  margin: 0 15px 0 0; /* Dodajemy margines z prawej strony, aby zachować odstęp między tekstem a logiem */
+}
+
+header img {
+  height: 50px; /* Dostosuj wysokość logo */
+  width: auto; /* Zachowaj proporcje obrazu */
+}
+
+/* MENU BOCZNE */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 41px;
+  width: 70px;
+  background-color: #125773;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.sidebar a:hover {
+  background-color: #147594;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover .link-text,
+.sidebar a:hover .material-icons {
+  color: #ffffff;
+}
+
+.sidebar a .material-icons {
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a .link-text {
+  flex-grow: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.expanded a .link-text {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+/* STOPKA */
+footer {
+  background-color: #012e40;
+  color: white;
+  text-align: center;
+  padding: 11px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* GŁÓWNY KONTENER */
+.bank-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 80px;
+  position: relative;
+}
+
+.bank-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.bank-container label {
+  margin-bottom: 5px;
+}
+
+.bank-container select,
+.bank-container input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.bank-container button {
+  padding: 20px 20px;
+  background-color: #28a745; /* Zielony kolor przycisku importu */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Przycisk importu na całą szerokość */
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.bank-container button:hover {
+  background-color: #209d3d; /* Ciemniejszy odcień zielonego */
+}
+
+.status-message {
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: 600;
+  /* color: #333; */
+  text-align: center;
+  border-radius: 4px;
+  opacity: 0.9; /* Dodaje lekką przezroczystość */
+}
+
+.status-message.success {
+  background-color: rgba(40, 167, 69, 0.5); /* Zielony z przezroczystością */
+}
+
+.status-message.error {
+  background-color: rgba(220, 53, 69, 0.5); /* Czerwony z przezroczystością */
+}
+
+.bank-selection {
+  display: flex;
+  gap: 10px; /* Doda niewielką przerwę między przyciskami */
+}
+
+.bank-button {
+  flex-grow: 1; /* Zapewnia, że przyciski będą miały taką samą szerokość */
+  padding: 20px; /* Zwiększona wysokość przycisków */
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #c5dafa; /* Jasny kolor dla niezaznaczonego przycisku */
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* Styl dla zaznaczonego przycisku */
+input[type="radio"]:checked + label {
+  background-color: #4285f4; /* Nieco ciemniejszy kolor dla zaznaczonego przycisku */
+  color: white;
+  border-color: #4285f4;
+}
+
+/* Ukrycie domyślnego inputa radio, aby pokazać tylko label */
+input[type="radio"] {
+  display: none;
+}
+
+.bank-button:hover {
+  background-color: #a8c7f6; /* Zmiana koloru przy najechaniu na niezaznaczony przycisk */
+}
+
+.bank-container label {
+  margin-bottom: 5px;
+  font-size: 20px; /* Ustaw większą czcionkę dla etykiet */
+  font-weight: 600; /* Dodajemy nieco wagi dla lepszej czytelności */
+}
+
+/* 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+/* Stylizacja przycisków w sekcji wyników importu */
+.import-results .form-actions {
+  display: flex; /* Ustawienie przycisków obok siebie */
+  gap: 10px; /* Odstęp między przyciskami */
+}
+
+.import-results .form-actions button {
+  flex-grow: 1; /* Każdy przycisk zajmuje połowę dostępnej przestrzeni */
+  padding: 20px 20px;
+  border: none; /* Usunięcie obramowania */
+  color: white; /* Biały tekst na przyciskach */
+  font-weight: 600; /* Pogrubienie tekstu */
+  cursor: pointer; /* Kursor wskaźnika */
+}
+
+/* Styl dla przycisku 'Zapisz wybrane transakcje' */
+.import-results .form-actions button[name="submit_transactions"] {
+  background-color: #28a745; /* Zielony kolor */
+}
+
+.import-results .form-actions button[name="submit_transactions"]:hover {
+  background-color: #209d3d; /* Ciemniejszy odcień zielonego */
+}
+
+/* Styl dla przycisku 'Anuluj' */
+.import-results .form-actions button[name="cancel_import"] {
+  background-color: #dc3545; /* Czerwony kolor */
+}
+
+.import-results .form-actions button[name="cancel_import"]:hover {
+  background-color: #c82333; /* Ciemniejszy odcień czerwonego */
+}
+
+/* Stylizacja tabeli z wynikami importu */
+.import-results table {
+  width: 100%; /* Tabela na całą dostępną szerokość */
+  border-collapse: collapse; /* Usuwa domyślne odstępy między komórkami */
+  text-align: center; /* Wyśrodkowanie tekstu w komórkach */
+}
+
+.import-results th,
+.import-results td {
+  border: 1px solid #ddd; /* Subtelne obramowanie komórek */
+  padding: 8px; /* Odpowiednia przestrzeń w komórkach */
+  text-align: left; /* Tekst wyrównany do lewej */
+}
+
+/* Nagłówek tabeli */
+.import-results th {
+  background-color: #f2f2f2; /* Jasne tło dla nagłówka */
+  color: #333; /* Ciemniejszy kolor tekstu */
+  font-weight: bold; /* Pogrubienie tekstu */
+}
+
+.import-results tr:hover {
+  background-color: #ddd; /* Kolor tła przy najechaniu */
+}
+
+/* Specyficzny hover dla wierszy istniejących transakcji */
+.import-results tr.existing-transaction:hover {
+  background-color: #faccd0; /* Nieco jaśniejszy czerwony kolor tła dla hover */
+}
+/* Styl dla checkboxów */
+.import-results input[type="checkbox"] {
+  width: 20px; /* Zwiększenie szerokości */
+  height: 20px; /* Zwiększenie wysokości */
+  cursor: pointer; /* Kursor wskazujący, że można kliknąć */
+  -webkit-appearance: none; /* Usunięcie domyślnego stylu w Webkit/Blink */
+  appearance: none; /* Usunięcie domyślnego stylu */
+  background-color: #fff; /* Białe tło */
+  border: 2px solid #555; /* Granatowa ramka */
+  border-radius: 4px; /* Zaokrąglone rogi */
+  transition: background-color 0.2s; /* Animacja tła */
+  display: block; /* Blokowy model wyświetlania */
+  margin: auto; /* Automatyczny margines wyśrodkuje checkbox */
+}
+
+/* Styl dla checkboxa przy zaznaczeniu */
+.import-results input[type="checkbox"]:checked {
+  background-color: #4285f4; /* Niebieskie tło dla zaznaczonego */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%23fff" d="M7.629 14.571L3.357 10.3a1.143 1.143 0 0 1 0-1.614l1.614-1.614a1.143 1.143 0 0 1 1.614 0l2.434 2.434 5.2-5.2a1.143 1.143 0 0 1 1.614 0l1.614 1.614a1.143 1.143 0 0 1 0 1.614l-7.486 7.486a1.143 1.143 0 0 1-1.614 0z"/></svg>'); /* Ikona zaznaczenia */
+  background-repeat: no-repeat; /* Brak powtarzania ikony */
+  background-position: center; /* Centrowanie ikony */
+  border-color: #4285f4; /* Niebieska ramka dla zaznaczonego */
+}
+
+/* Styl dla checkboxa przy najechaniu */
+.import-results input[type="checkbox"]:hover {
+  border-color: #4285f4; /* Zmiana koloru ramki przy najechaniu */
+}
+
+/* Styl dla pól input i select w tabeli */
+.import-results input[type="text"],
+.import-results input[type="number"],
+.import-results input[type="date"],
+.import-results select {
+  width: 100%; /* Rozciągnięcie na całą dostępną szerokość komórki */
+  padding: 8px; /* Dodanie paddingu dla lepszej czytelności */
+  border: 1px solid #ccc; /* Jednolite obramowanie */
+  border-radius: 4px; /* Lekko zaokrąglone rogi */
+  box-sizing: border-box; /* Box-sizing, aby padding i border nie zwiększały szerokości elementu */
+}
+
+/* Styl dla pól input przy najechaniu i w fokusie */
+.import-results input[type="text"]:hover,
+.import-results input[type="number"]:hover,
+.import-results input[type="date"]:hover,
+.import-results select:hover,
+.import-results input[type="text"]:focus,
+.import-results input[type="number"]:focus,
+.import-results input[type="date"]:focus,
+.import-results select:focus {
+  border-color: #80bdff; /* Zmiana koloru obramowania przy najechaniu i fokusie */
+  outline: none; /* Usunięcie domyślnego konturu */
+}
+
+/* Stylizacja przycisków formularza */
+.import-results .form-actions button {
+  margin-top: 10px; /* Dodanie odstępu od górnej części tabeli */
+  margin-right: 5px; /* Dodanie odstępu między przyciskami */
+}
+
+/* Styl dla komórek tabeli */
+.import-results td {
+  vertical-align: middle; /* Wyśrodkowanie zawartości komórek pionowo */
+  text-align: center; /* Wyśrodkowanie zawartości komórek poziomo */
+  padding: 8px; /* Ustalenie paddingu dla wszystkich komórek */
+}
+
+/* Dodatkowe style dla inputów i selectów, aby wypełniały komórkę tabeli */
+.import-results input[type="text"],
+.import-results input[type="number"],
+.import-results input[type="date"],
+.import-results select {
+  width: calc(100% - 16px); /* Szerokość równa 100% komórki minus padding */
+  margin: auto; /* Wyśrodkowanie elementu w komórce */
+  display: block; /* Wyświetlenie jako blok, aby zająć całą szerokość */
+}
+
+/* Responsywność tabeli */
+@media (max-width: 768px) {
+  .import-results table {
+    font-size: 14px; /* Zmniejszenie czcionki dla mniejszych ekranów */
+  }
+
+  .import-results th,
+  .import-results td {
+    padding: 5px; /* Zmniejszenie paddingu komórek dla mniejszych ekranów */
+  }
+
+  .import-results input[type="text"],
+  .import-results input[type="number"],
+  .import-results input[type="date"],
+  .import-results select {
+    padding: 6px; /* Zmniejszenie paddingu pól input dla mniejszych ekranów */
+  }
+}
+.existing-transaction {
+  background-color: #fde2e2; /* Delikatny czerwony kolor tła */
+}
+
+#zarzadzajSlownikiem {
+  padding: 20px 20px; /* Przykładowe rozmiary */
+  background-color: #007bff; /* Przykładowy kolor tła */
+  color: white; /* Przykładowy kolor tekstu */
+  border: none; /* Usunięcie obramowania */
+  border-radius: 4px; /* Zaokrąglenie rogów */
+  cursor: pointer;
+  width: auto; /* Szerokość dostosowana do zawartości */
+  font-weight: 600; /* Przykładowa waga czcionki */
+  font-size: 15px; /* Przykładowy rozmiar czcionki */
+  margin-top: 10px;
+}
+
+#zarzadzajSlownikiem:hover {
+  background-color: #006adb; /* Kolor tła po najechaniu myszką */
+}
+
+.modal {
+  display: none; /* Ukrywa modal domyślnie */
+  position: fixed; /* Pozostaje w miejscu nawet przy przewijaniu */
+  z-index: 1000; /* Nadaje modalowi wysoki poziom indeksu */
+  left: 0;
+  top: 0;
+  width: 100%; /* Pełna szerokość */
+  height: 100%; /* Pełna wysokość */
+  overflow: auto; /* Włącza przewijanie, jeśli potrzebne */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Ciemne tło z lekką przezroczystością */
+}
+
+.modal-content {
+  position: relative;
+  border-radius: 10px; /* Dodaje zaokrąglenie narożników */
+  background-color: #fefefe;
+  margin: 5% auto; /* 5% od góry i wyśrodkowany poziomo */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Szerokość modalu */
+  max-height: 70vh; /* Maksymalna wysokość to 70% od wysokości viewport */
+  overflow-y: auto; /* Włącza pionowy suwak gdy zawartość przekracza maksymalną wysokość */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  animation-name: modalopen;
+  animation-duration: 0.4s;
+}
+
+/* Stylizuje pasek przewijania dla całego modala */
+.modal-content::-webkit-scrollbar {
+  width: 10px; /* Szerokość paska przewijania */
+}
+
+/* Stylizuje tło paska przewijania */
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Kolor tła paska */
+  border-radius: 10px; /* Zaokrąglenie narożników tła paska */
+}
+
+/* Stylizuje ruchomy element paska przewijania (kciuk) */
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888; /* Kolor kciuka */
+  border-radius: 10px; /* Zaokrąglenie narożników kciuka */
+}
+
+/* Stylizuje kciuk paska przewijania podczas najechania kursorem */
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Kolor kciuka podczas najechania */
+}
+
+@keyframes modalopen {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 5%;
+    opacity: 1;
+  }
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Stylizacja tabeli w modalu */
+#slownikTable {
+  width: 100%; /* Pełna szerokość tabeli */
+  border-collapse: collapse;
+}
+
+#slownikTable th,
+#slownikTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#slownikTable th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Dodatkowe style formularza */
+#formSlownik label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#formSlownik input[type="text"],
+#formSlownik select {
+  width: calc(
+    100% - 22px
+  ); /* Pełna szerokość z odliczeniem paddingu i borderów */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#formSlownik input[type="submit"] {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 15;
+}
+
+#formSlownik input[type="submit"]:hover {
+  background-color: #45a049;
+}

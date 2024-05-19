@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+/* NAPIS USTAWIENIA */
+.settings-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 33px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość */
+  background-color: #012e40;
+  color: white;
+  font-size: 18px;
+  padding: 6px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+header .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość kontenera */
+}
+
+header h1 {
+  margin: 0 15px 0 0; /* Dodajemy margines z prawej strony, aby zachować odstęp między tekstem a logiem */
+}
+
+header img {
+  height: 50px; /* Dostosuj wysokość logo */
+  width: auto; /* Zachowaj proporcje obrazu */
+}
+
+/* MENU BOCZNE */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 41px;
+  width: 70px;
+  background-color: #125773;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.sidebar a:hover {
+  background-color: #147594;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover .link-text,
+.sidebar a:hover .material-icons {
+  color: #ffffff;
+}
+
+.sidebar a .material-icons {
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a .link-text {
+  flex-grow: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.expanded a .link-text {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+/* STOPKA */
+footer {
+  background-color: #012e40;
+  color: white;
+  text-align: center;
+  padding: 11px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* GŁÓWNY KONTENER */
+.categories-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 80px;
+  position: relative;
+}
+/* NAPIS KATEGORIE */
+.categories-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 33px;
+}
+
+/* PRZYCISKI WYDATKI - DOCHODY - DODAJ NOWĄ KATEGORIE*/
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.buttons button {
+  padding: 20px;
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 22px;
+  font-weight: bold;
+}
+#addCategoryBtn {
+  background: #28a745;
+  margin-left: auto;
+}
+.buttons button:hover {
+  filter: brightness(85%);
+}
+#addCategoryBtn:hover {
+  background: #218838;
+}
+
+/* LISTA KATEGORII */
+#kategorieWydatkow ul,
+#kategorieDochodow ul {
+  list-style-type: none;
+}
+
+#kategorieWydatkow ul li,
+#kategorieDochodow ul li {
+  background: #f4f3f3;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#kategorieWydatkow ul li:hover,
+#kategorieDochodow ul li:hover {
+  background: #e6e6e6;
+}
+
+/* DODAWANIE NOWEJ KATEGORII */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: white;
+  width: 50%; /* Adjust width as needed */
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Centrowanie treści w poziomie */
+}
+
+.modal-content button[name="submitCategory"] {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+}
+.modal-content button[name="submitCategory"]:hover {
+  background-color: #218838;
+}
+.close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+select {
+  margin-bottom: 40px;
+}
+.submit-btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 505px; /* Zwiększony margines górny */
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  color: #3a3a3a;
+  text-align: center;
+}
+
+.delete-category {
+  color: red;
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 2em;
+  margin-right: 20px;
+}
+/* USUWANIE KATEGORII */
+#confirmDelete {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+#confirmDelete:hover {
+  background-color: #c82333;
+}
+#cancelDelete {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#cancelDelete:hover {
+  background-color: #5a6268;
+}

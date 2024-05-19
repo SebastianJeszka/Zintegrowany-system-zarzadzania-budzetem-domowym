@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+/* NAPIS USTAWIENIA */
+.forecast-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 33px;
+  text-align: center;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość */
+  background-color: #012e40;
+  color: white;
+  font-size: 18px;
+  padding: 6px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+header .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość kontenera */
+}
+
+header h1 {
+  margin: 0 15px 0 0; /* Dodajemy margines z prawej strony, aby zachować odstęp między tekstem a logiem */
+}
+
+header img {
+  height: 50px; /* Dostosuj wysokość logo */
+  width: auto; /* Zachowaj proporcje obrazu */
+}
+
+/* MENU BOCZNE */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 41px;
+  width: 70px;
+  background-color: #125773;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.sidebar a:hover {
+  background-color: #147594;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover .link-text,
+.sidebar a:hover .material-icons {
+  color: #ffffff;
+}
+
+.sidebar a .material-icons {
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a .link-text {
+  flex-grow: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.expanded a .link-text {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+/* STOPKA */
+footer {
+  background-color: #012e40;
+  color: white;
+  text-align: center;
+  padding: 11px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* GŁÓWNY KONTENER */
+.forecast-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 80px;
+  position: relative;
+}
+
+/* Style formularza */
+.forecast-container form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forecast-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1em; /* Powiększenie czcionki */
+}
+
+.forecast-container select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 1em; /* Powiększenie czcionki */
+  font-weight: bold; /* Pogrubienie czcionki */
+}
+
+/* Ujednolicone style dla przycisków */
+
+.forecast-container button {
+  width: 100%; /* Ustawienie pełnej szerokości kontenera */
+  padding: 15px; /* Zwiększenie paddingu dla większej wysokości */
+  background-color: #007bff; /* Zielony kolor przycisków */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.forecast-container input[type="submit"] {
+  width: 100%; /* Ustawienie pełnej szerokości kontenera */
+  padding: 15px; /* Zwiększenie paddingu dla większej wysokości */
+  background-color: #4caf50; /* Zielony kolor przycisków */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.forecast-container input[type="submit"]:hover {
+  background-color: #45a049; /* Ciemniejszy odcień zielonego dla hover */
+}
+
+.forecast-container button:hover {
+  background-color: #006adb;
+}
+
+/* Zwiększona wysokość i jednolita czcionka dla wyników prognozy */
+#forecastResult {
+  background-color: #eef6f9;
+  color: #333;
+  border: 1px solid #d1e3f0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px; /* Zwiększony padding dla większej wysokości */
+  font-size: 1.1em; /* Większa czcionka */
+  font-weight: bold; /* Pogrubienie czcionki */
+}
+
+/* Styl dla dodatkowych informacji o systemie prognozowania z większą czcionką */
+#forecastInfo {
+  margin-top: 20px;
+  padding: 20px; /* Zwiększony padding dla większej wysokości */
+  background-color: #eef6f9;
+  border-radius: 4px;
+  border: 1px solid #d1e3f0;
+  font-size: 1.2em; /* Jeszcze większa czcionka */
+  font-weight: bold; /* Pogrubienie czcionki */
+}

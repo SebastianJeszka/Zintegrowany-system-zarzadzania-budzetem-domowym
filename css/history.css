@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość */
+  background-color: #012e40;
+  color: white;
+  font-size: 18px;
+  padding: 6px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+header .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość kontenera */
+}
+
+header h1 {
+  margin: 0 15px 0 0; /* Dodajemy margines z prawej strony, aby zachować odstęp między tekstem a logiem */
+}
+
+header img {
+  height: 50px; /* Dostosuj wysokość logo */
+  width: auto; /* Zachowaj proporcje obrazu */
+}
+
+/* MENU BOCZNE */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 41px;
+  width: 70px;
+  background-color: #125773;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.sidebar a:hover {
+  background-color: #147594;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover .link-text,
+.sidebar a:hover .material-icons {
+  color: #ffffff;
+}
+
+.sidebar a .material-icons {
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a .link-text {
+  flex-grow: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.expanded a .link-text {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+/* STOPKA */
+footer {
+  background-color: #012e40;
+  color: white;
+  text-align: center;
+  padding: 11px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* GŁÓWNY KONTENER */
+
+.history-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 80px;
+  position: relative;
+  overflow-x: auto; /* Jeśli tabela będzie szeroka, pozwól na przewijanie */
+}
+/* NAPIS USTAWIENIA */
+.history-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 33px;
+  text-align: center;
+}
+.history-container table {
+  width: 100%; /* Tabela ma zajmować całą dostępną szerokość */
+  border-collapse: collapse; /* Usuwa podwójne obramowanie */
+  font-family: "Roboto", sans-serif; /* Ustawienie fontu */
+}
+
+.history-container th,
+.history-container td {
+  text-align: left; /* Wyrównanie tekstu do lewej */
+  padding: 12px; /* Dostosowanie odstępu wewnątrz komórek */
+  border-bottom: 1px solid #ddd; /* Subtelna linia oddzielająca komórki */
+}
+
+.history-container th {
+  background-color: #f2f2f2; /* Jasne tło dla nagłówków */
+  color: #333; /* Ciemniejszy kolor tekstu dla nagłówków */
+}
+
+.history-container tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra striping dla wierszy */
+}
+
+.history-container tr:hover {
+  background-color: #e8e8e8; /* Kolor tła przy najechaniu myszką */
+}
+
+/* Opcjonalnie, możesz też dodać stylizację dla przewijania, jeśli tabela jest szeroka */
+.history-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.history-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.history-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.history-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* FILTROWANIE */
+
+/* FILTROWANIE */
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f2f2f2; /* Jasnoszary tło */
+  padding: 20px;
+  border-radius: 15px; /* Zaokrąglone rogi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień */
+  margin: auto; /* Wyśrodkowanie formularza */
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+form select,
+form input[type="date"],
+form input[type="submit"] {
+  margin: 0 10px;
+  border: 1px solid #ccc; /* Subtelna ramka */
+  border-radius: 5px; /* Zaokrąglone rogi dla pól i przycisków */
+  padding: 10px; /* Dodatkowa przestrzeń wewnątrz */
+}
+
+form input[type="submit"] {
+  background-color: #4caf50; /* Zielony kolor tła dla przycisku */
+  color: white;
+  width: 150px;
+  cursor: pointer; /* Kursor zmienia się na wskaźnik */
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049; /* Ciemniejszy odcień zieleni po najechaniu */
+}
+
+/* Styl dla wyłączonych pól daty */
+form input[type="date"]:disabled {
+  background-color: #ddd;
+}
+
+/* Styl dla etykiet "Od:" i "Do:" */
+form label {
+  margin-right: 5px;
+  font-weight: bold;
+  margin-left: 0;
+  padding: 0;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group label {
+  margin-right: 5px; /* Lub inna wartość, aby dostosować odstęp */
+  white-space: nowrap; /* Zapobiega łamaniu tekstu etykiety */
+}
+
+.no-results-message p {
+  color: #666;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-style: italic;
+}

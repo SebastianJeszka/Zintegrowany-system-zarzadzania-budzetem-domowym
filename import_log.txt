@@ -1,0 +1,42 @@
+2024-02-07 19:38:01,713 Typ banku: mBank
+2024-02-07 19:38:01,714 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-02-07 19:38:17,442 Typ banku: PKO
+2024-02-07 19:38:17,442 Nag³ówki kolumn: ['Data ksiagowania', 'Data waluty', 'Nadawca / Odbiorca', 'Adres nadawcy / odbiorcy', 'Rachunek zrodlowy', 'Rachunek docelowy', 'Tytulem', 'Kwota operacji', 'Waluta', 'Numer referencyjny', 'Typ operacji', 'Kategoria']
+2024-02-07 20:12:17,577 Typ banku: mBank
+2024-02-07 20:12:17,577 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-02-07 20:12:24,885 Typ banku: PKO
+2024-02-07 20:12:24,885 Nag³ówki kolumn: ['Data ksiagowania', 'Data waluty', 'Nadawca / Odbiorca', 'Adres nadawcy / odbiorcy', 'Rachunek zrodlowy', 'Rachunek docelowy', 'Tytulem', 'Kwota operacji', 'Waluta', 'Numer referencyjny', 'Typ operacji', 'Kategoria']
+2024-02-12 21:35:48,056 Typ banku: PKO
+2024-02-12 21:35:48,057 Nag³ówki kolumn: ['Data ksiagowania', 'Data waluty', 'Nadawca / Odbiorca', 'Adres nadawcy / odbiorcy', 'Rachunek zrodlowy', 'Rachunek docelowy', 'Tytulem', 'Kwota operacji', 'Waluta', 'Numer referencyjny', 'Typ operacji', 'Kategoria']
+2024-03-11 14:13:33,600 Typ banku: mBank
+2024-03-11 14:13:33,601 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-03-12 13:23:33,408 Typ banku: mBank
+2024-03-12 13:23:33,409 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-03-12 17:31:43,673 Typ banku: PKO
+2024-03-12 17:31:43,673 Nag³ówki kolumn: ['Data ksiagowania', 'Data waluty', 'Nadawca / Odbiorca', 'Adres nadawcy / odbiorcy', 'Rachunek zrodlowy', 'Rachunek docelowy', 'Tytulem', 'Kwota operacji', 'Waluta', 'Numer referencyjny', 'Typ operacji', 'Kategoria']
+2024-03-13 15:06:14,787 Typ banku: mBank
+2024-03-13 15:06:14,788 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-03-29 17:39:55,277 Typ banku: mBank
+2024-03-29 17:39:55,278 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-03-29 17:41:22,787 Typ banku: mBank
+2024-03-29 17:41:22,787 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-02 21:12:52,273 Typ banku: mBank
+2024-04-02 21:12:52,274 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-02 23:23:51,844 Typ banku: mBank
+2024-04-02 23:23:51,844 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-02 23:45:47,581 Typ banku: mBank
+2024-04-02 23:45:47,581 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-03 11:02:52,437 Typ banku: mBank
+2024-04-03 11:02:52,437 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-03 14:54:15,076 Typ banku: mBank
+2024-04-03 14:54:15,076 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-03 20:48:43,240 Typ banku: mBank
+2024-04-03 20:48:43,241 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-04 09:59:44,170 Typ banku: mBank
+2024-04-04 09:59:44,171 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-04 10:01:27,503 Typ banku: mBank
+2024-04-04 10:01:27,503 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-04 10:02:04,544 Typ banku: mBank
+2024-04-04 10:02:04,544 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']
+2024-04-04 12:28:18,608 Typ banku: mBank
+2024-04-04 12:28:18,608 Nag³ówki kolumn: ['#Data ksiêgowania', '#Data operacji', '#Opis operacji', '#Tytu³', '#Nadawca/Odbiorca', '#Numer konta', '#Kwota', '#Saldo po operacji', '#Data ksiêgowania.1', '#Data operacji.1', '#Opis operacji.1', '#Tytu³.1', '#Nadawca/Odbiorca.1', '#Numer konta.1', '#Kwota.1', '#Saldo po operacji.1']

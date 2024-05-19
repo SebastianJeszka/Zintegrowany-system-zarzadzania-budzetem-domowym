@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość */
+  background-color: #012e40;
+  color: white;
+  font-size: 18px;
+  padding: 6px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+header .centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkuj zawartość kontenera */
+}
+
+header h1 {
+  margin: 0 15px 0 0; /* Dodajemy margines z prawej strony, aby zachować odstęp między tekstem a logiem */
+}
+
+header img {
+  height: 50px; /* Dostosuj wysokość logo */
+  width: auto; /* Zachowaj proporcje obrazu */
+}
+
+/* MENU BOCZNE */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 41px;
+  width: 70px;
+  background-color: #125773;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.sidebar a:hover {
+  background-color: #147594;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover .link-text,
+.sidebar a:hover .material-icons {
+  color: #ffffff;
+}
+
+.sidebar a .material-icons {
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a .link-text {
+  flex-grow: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.expanded a .link-text {
+  opacity: 1;
+  padding-left: 10px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+/* STOPKA */
+footer {
+  background-color: #012e40;
+  color: white;
+  text-align: center;
+  padding: 11px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* GŁÓWNY KONTENER */
+.currency-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 80px;
+  position: relative;
+}
+/* TWÓJ BUDZET WYNOSI */
+.budget-section,
+.switch-buttons,
+.time-filter-btn,
+.chart-container,
+.categories-summary {
+  text-align: center;
+}
+.budget-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 60px;
+}
+.budget-section .material-icons {
+  font-size: 2.8rem;
+  color: #4caf50;
+}
+.budget-section .budget-amount {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.currency-title {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 1.6rem;
+  color: #333;
+}
+/* KALKULATOR */
+
+#currency-calculator-container {
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f3f3;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#currency-calculator-container .currency-title {
+  text-align: center;
+  color: #333;
+}
+#currency-calculator-container form {
+  display: flex;
+  flex-wrap: wrap; /* Zapewnia responsywność na mniejszych ekranach */
+  gap: 10px; /* Odległość między elementami */
+  justify-content: center;
+  width: 100%;
+}
+
+#currency-calculator-container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+#currency-calculator-container .form-group label {
+  margin-bottom: 5px;
+}
+
+#currency-calculator-container .form-group input,
+#currency-calculator-container .form-group select {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#currency-calculator-container button#convert {
+  padding: 5px 150px; /* zmniejszony padding góra-dół, niezmieniony padding lewo-prawo */
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#currency-calculator-container button#convert:hover {
+  background-color: #4cae4c;
+}
+
+#currency-calculator-container #conversionResult {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  /* Dostosuj ten punkt przełamania według potrzeb */
+  #currency-calculator-container .form-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #currency-calculator-container .form-group label {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  #currency-calculator-container button#convert {
+    white-space: nowrap;
+
+    margin-left: 10px; /* Dostosuj odległość przycisku od selektorów */
+  }
+}
+
+#currency-calculator-container .form-group select {
+  min-width: 200px; /* Przykładowa minimalna szerokość */
+}
+#currency-calculator-container .form-group input[type="number"] {
+  min-width: 230px; /* Przykładowa minimalna szerokość */
+}
+
+#currency-calculator-container .form-group input,
+#currency-calculator-container .form-group select,
+#currency-calculator-container button#convert {
+  padding: 10px; /* lub dowolna inna wartość, która pasuje do wysokości selectów */
+  font-size: 18px; /* dostosuj, aby pasowało do wielkości fontu w selectach */
+  height: 40px; /* ustaw wysokość równą wysokości selectów */
+  box-sizing: border-box; /* aby padding był wliczony w całkowitą wysokość */
+}
+
+#currency-calculator-container button#convert {
+  padding: 10px 20px; /* dostosuj poziomy padding, aby pasował do szerokości przycisku */
+  width: 320px;
+}
+
+/* PRZYCISKI */
+/* Styl dla przycisków */
+button {
+  padding: 20px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styl dla pierwszej grupy przycisków */
+.first-group {
+  background-color: #4caf50; /* Zielony */
+  color: white;
+}
+
+.first-group:hover {
+  background-color: #367c39; /* Ciemniejszy zielony */
+}
+
+/* Styl dla drugiej grupy przycisków */
+.second-group {
+  background-color: #008cba; /* Niebieski */
+  color: white;
+}
+
+.second-group:hover {
+  background-color: #005f73; /* Ciemniejszy niebieski */
+}
+
+/* Kontener dla przycisków */
+.button-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kontener dla pierwszej grupy przycisków */
+.button-container form .first-group {
+  flex-basis: calc(33.333% - 10px); /* Trzy przyciski w linii, z marginesem */
+}
+
+/* Kontener dla drugiej grupy przycisków */
+.button-container form .second-group {
+  flex-basis: calc(33.333% - 10px); /* Trzy przyciski w linii, z marginesem */
+}
